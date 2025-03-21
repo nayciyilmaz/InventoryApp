@@ -26,6 +26,6 @@ object AppModule {
         Room.databaseBuilder(
             context,
             InventoryDatabase::class.java,
-            name = "items"
+            name = "items.db"
         ).fallbackToDestructiveMigration().build()
 }

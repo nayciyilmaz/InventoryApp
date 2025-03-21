@@ -13,5 +13,6 @@ class InventoryRepo @Inject constructor(private val inventoryDao: InventoryDao) 
     suspend fun add(item: Item) = inventoryDao.insert(item)
     suspend fun delete(item: Item) = inventoryDao.delete(item)
     suspend fun update(item: Item) = inventoryDao.update(item)
-    fun allItems() : Flow<List<Item>> = inventoryDao.getAllItemsAlphabetically().flowOn(Dispatchers.IO).distinctUntilChanged()
+    fun allItems(): Flow<List<Item>> =
+        inventoryDao.getAllItemsAlphabetically().flowOn(Dispatchers.IO).distinctUntilChanged()
 }
